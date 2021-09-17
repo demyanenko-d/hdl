@@ -4,7 +4,7 @@ set adc_fifo_samples_per_converter [expr 64*1024]
 ## DAC FIFO depth in samples per converter
 set dac_fifo_samples_per_converter [expr 64*1024]
 
-source $ad_hdl_dir/projects/common/vmk180_es1/vmk180_es1_system_bd.tcl
+source $ad_hdl_dir/projects/common/vck190/vck190_system_bd.tcl
 source $ad_hdl_dir/projects/common/xilinx/adcfifo_bd.tcl
 source $ad_hdl_dir/projects/common/xilinx/dacfifo_bd.tcl
 

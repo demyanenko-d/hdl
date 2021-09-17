@@ -23,7 +23,7 @@ create_bd_port -dir O -from 31 -to 0 gpio2_o
 create_bd_port -dir O -from 31 -to 0 gpio2_t
 
 # instance: versal_cips
-create_bd_cell -type ip -vlnv xilinx.com:ip:versal_cips:2.1 sys_cips
+ad_ip_instance versal_cips sys_cips
 set_property -dict [list \
   CONFIG.PS_BOARD_INTERFACE	cips_fixed_io \
   CONFIG.PMC_SD1_PERIPHERAL_ENABLE {1} \
