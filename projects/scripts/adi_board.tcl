@@ -818,7 +818,7 @@ proc ad_cpu_interconnect {p_address p_name} {
   }
 
   if {$sys_zynq == 3} {
-    set sys_addr_cntrl_space [get_bd_addr_spaces sys_cips/Data1]
+    set sys_addr_cntrl_space [get_bd_addr_spaces /sys_cips/M_AXI_FPD]
   }
   if {$sys_zynq == 2} {
     set sys_addr_cntrl_space [get_bd_addr_spaces sys_ps8/Data]
@@ -983,7 +983,6 @@ proc ad_cpu_interrupt {p_ps_index p_mb_index p_name} {
    if {$p_index < 0 || $p_index > 15} {
       error "ERROR: ad_cpu_interrupt : Interrupt index ($p_index) out of range 0-15 "
     }
-    ad_ip_parameter sys_cips CONFIG.PS_USE_IRQ_$p_index {1}
     ad_connect $p_name sys_cips/pl_ps_irq$p_index
   }
 
