@@ -265,7 +265,8 @@ module system_top  #(
     //.rx_sync_0 (rx_syncout),
     //.tx_sync_0 (tx_syncin),
     .rx_sysref_0 (sysref),
-    .tx_sysref_0 (sysref)
+    .tx_sysref_0 (sysref),
+    .gt_reset (~gpio_i[43]) // HMC7044 PLL1 & PLL2 Lock
   );
 
 
