@@ -42,7 +42,7 @@ module sync_data #(
   input in_clk,
   input [NUM_OF_BITS-1:0] in_data,
   input out_clk,
-  output reg [NUM_OF_BITS-1:0] out_data
+  output reg [NUM_OF_BITS-1:0] out_data = 'h0
 );
 
 generate
