@@ -303,12 +303,12 @@ if {$ADI_PHY_SEL == 1} {
   ad_connect $sys_cpu_clk jesd204_phy/apb3clk_quad
   ad_connect $sys_cpu_clk jesd204_phy/apb3clk_gt_bridge_ip_0
 
-  ad_connect gt_reset jesd204_phy/rate_sel_gt_bridge_ip_0
+  ad_connect GND jesd204_phy/rate_sel_gt_bridge_ip_0
 
   ad_connect GND jesd204_phy/reset_rx_pll_and_datapath_in
   ad_connect GND jesd204_phy/reset_tx_pll_and_datapath_in
 
-  ad_connect GND jesd204_phy/gt_reset_gt_bridge_ip_0
+  ad_connect gt_reset jesd204_phy/gt_reset_gt_bridge_ip_0
 
   ad_connect axi_mxfe_rx_jesd/rx_axi/device_reset jesd204_phy/reset_rx_datapath_in
   ad_connect axi_mxfe_tx_jesd/tx_axi/device_reset jesd204_phy/reset_tx_datapath_in

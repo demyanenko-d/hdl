@@ -216,6 +216,15 @@ module system_top  #(
   assign gpio_i[94:54] = gpio_o[94:54];
   assign gpio_i[31:0] = gpio_o[31:0];
 
+  reg ext_pll_lock,ext_pll_lock_d;
+
+  always @(posedge tx_device_clk) begin
+    ext_pll_lock <= gpio_i[43];
+    ext_pll_lock_d <= ext_pll_lock;
+  end
+
+  assign gt_reset = ext_pll_lock & ~ext_pll_lock_d;
+
   system_wrapper i_system_wrapper (
     .gpio0_i (gpio_i[31:0]),
     .gpio0_o (gpio_o[31:0]),
@@ -266,7 +275,7 @@ module system_top  #(
     //.tx_sync_0 (tx_syncin),
     .rx_sysref_0 (sysref),
     .tx_sysref_0 (sysref),
-    .gt_reset (~gpio_i[43]) // HMC7044 PLL1 & PLL2 Lock
+    .gt_reset (gt_reset)
   );
 
 
