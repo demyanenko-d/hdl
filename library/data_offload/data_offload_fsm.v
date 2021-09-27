@@ -262,7 +262,7 @@ module data_offload_fsm #(
     wr_ready_d <= wr_ready;
     // flush out the DMA if the transfer is bigger than the storage size
     wr_ready <= ((wr_fsm_state == WR_WRITE_TO_MEM) ||
-                ((wr_fsm_state == WR_WAIT_TO_END) && wr_valid_in && wr_ready_d && !(wr_last))) ? 1'b1 : 1'b0;
+                ((wr_fsm_state == WR_WAIT_TO_END) && wr_ready_d && !(wr_valid_in && wr_last))) ? 1'b1 : 1'b0;
   end
 
   // write control
